@@ -17,7 +17,14 @@ class App extends Component {
     cartList: [],
   }
 
-  //   TODO: Add your code for remove all cart items, increment cart item quantity, decrement cart item quantity, remove cart item
+  //   TODO: Adding new code for remove all cart items, increment cart item quantity, decrement cart item quantity, remove cart item
+
+  updateExistingQuantity = modifiedList => {
+    console.log(
+      'change quantity on existing cart item , add to cart on the same item already on cart',
+    )
+    this.setState({cartList: modifiedList})
+  }
 
   removeAllCartItems = () => {
     console.log('This is  remove all func')
@@ -26,7 +33,6 @@ class App extends Component {
 
   addCartItem = product => {
     this.setState(prevState => ({cartList: [...prevState.cartList, product]}))
-    //   TODO: Update the code here to implement addCartItem
   }
 
   removeCartItem = id => {
@@ -67,6 +73,7 @@ class App extends Component {
       <CartContext.Provider
         value={{
           cartList,
+          updateExistingQuantity: this.updateExistingQuantity,
           removeAllCartItems: this.removeAllCartItems,
           addCartItem: this.addCartItem,
           removeCartItem: this.removeCartItem,

@@ -126,7 +126,7 @@ class ProductItemDetails extends Component {
           title,
           totalReviews,
         } = productData
-        const {addCartItem, cartList} = value
+        const {addCartItem, cartList, updateExistingQuantity} = value
         const onClickAddToCart = () => {
           if (cartList.find(each => each.id === id)) {
             console.log(id)
@@ -139,8 +139,9 @@ class ProductItemDetails extends Component {
             console.log(
               'Do some thing to increase the quantity of the existing item in cart !!',
             )
+            updateExistingQuantity(cartListNew)
           } else {
-            addCartItem({...productData, quantity})
+            addCartItem({...productData, quantity}) // noting but adding a new key
           }
         }
 
