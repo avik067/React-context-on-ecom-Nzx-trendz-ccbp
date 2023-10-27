@@ -3,7 +3,7 @@ import CartListView from '../CartListView'
 
 import CartContext from '../../context/CartContext'
 import EmptyCartView from '../EmptyCartView'
-
+import TotalPriceView from '../TotalPriceView'
 import './index.css'
 
 const Cart = () => (
@@ -11,7 +11,7 @@ const Cart = () => (
     {value => {
       const {cartList, removeAllCartItems} = value
       const showEmptyView = cartList.length === 0
-      // TODO: Update the functionality to remove all the items in the cart
+      // TODO: Updating the functionality to remove all the items in the cart
 
       const removeAll = () => {
         removeAllCartItems()
@@ -35,8 +35,8 @@ const Cart = () => (
                     Remove All
                   </button>
                 </div>
-
                 <CartListView />
+                <TotalPriceView />
               </div>
             )}
           </div>
