@@ -21,8 +21,8 @@ const TotalPriceView = () => {
           <div className="total-price-div row justify-end align-center">
             <div>
               <p>
-                Order Total:{' '}
-                <strong style={{color: 'black'}}>RS {totalPrice}/-</strong>
+                <h1>Order Total</h1>
+                <strong style={{color: 'black'}}>:RS {totalPrice}/-</strong>
               </p>
               <p>{cartList.length} Items in cart</p>
               <button type="button" className="check-out">
